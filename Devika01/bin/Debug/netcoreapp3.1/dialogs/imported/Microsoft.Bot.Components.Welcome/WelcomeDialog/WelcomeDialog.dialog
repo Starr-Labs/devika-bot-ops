@@ -1,0 +1,121 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "WelcomeDialog",
+      "description": "Greets new and returning users",
+      "id": "8pOkoq"
+    },
+    "name": "WelcomeDialog"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "tcqJ5M",
+        "name": "BeginDialog"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "sF0fYv"
+          },
+          "condition": "exists(user.greeted)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "PsAJ3p"
+              },
+              "activity": "${SendActivity_WelcomeReturningUser()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "f3uG2y"
+              },
+              "activity": "${SendActivity_WelcomeNewUser()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "ucFnwQ"
+              },
+              "property": "user.greeted",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "FGfECP",
+            "comment": "What kind of work item do you want to create?"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${ChoiceInput_InvalidPrompt_FGfECP()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "conversation.workItemType",
+          "value": "=this.value",
+          "style": "list",
+          "choices": [
+            "pbi",
+            "bug",
+            "task"
+          ],
+          "prompt": "${ChoiceInput_Prompt_FGfECP()}",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "validations": []
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "K3qAYy"
+          },
+          "condition": "=conversation.workItemType == \"pbi\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "Q7ULNE"
+              },
+              "dialog": "PBI_Create",
+              "activityProcessed": false
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "jmPC7C"
+              },
+              "activity": "${SendActivity_jmPC7C()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "WelcomeDialog.lg",
+  "id": "WelcomeDialog",
+  "recognizer": "WelcomeDialog.lu.qna",
+  "$Imported": "af4f041fedef6fc782dfdbdc10c87be3"
+}

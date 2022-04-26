@@ -1,0 +1,28 @@
+{
+  "profileName": "DevikaBotOps",
+  "jobId": "54ea3f70-47e2-453c-8930-20ebd6e28405",
+  "projectId": "98486.76140224042",
+  "time": "2022-04-21T19:14:01.758Z",
+  "log": [
+    "Creating Azure resources...",
+    "Checking the Existence of the Resource Group ...",
+    "Use the Resource Group: BOT_DEVIKA_OPS_ASSISTANT at eastus",
+    "> Creating App Registration ...",
+    "Start to add password for App, Id : c7c6558e-0591-4e78-9242-7609f3990e9a",
+    "> Create App Registration Success! ID: c7c6558e-0591-4e78-9242-7609f3990e9a",
+    "Deploying Azure Functions Resource ...",
+    "Deploying Azure Functions Success",
+    "Deploying Bot Resource ...",
+    "Deploying Luis Authoring Resource ...",
+    "Deploying Luis Resource ...",
+    "Deploying Cosmos DB Resource ...",
+    "Deploying Application Insights Resource ...",
+    "> Linking Application Insights settings to Bot Service ...",
+    "> AppInsights AppId: c0ff286c-9c0c-4aed-a7a9-c5ce9493ce42 ...",
+    "> AppInsights InstrumentationKey: 934e8275-50c0-4e19-861e-e98df452a76b ...",
+    "> AppInsights ApiKey: 8f32czjf87e8beyjvikein13x32ftmey1lxwh6a2 ...",
+    "> Linking Application Insights settings to Bot Service Success!",
+    "Deploying Blob Storage Resource ...",
+    "Provisioning completed successfully!"
+  ]
+}

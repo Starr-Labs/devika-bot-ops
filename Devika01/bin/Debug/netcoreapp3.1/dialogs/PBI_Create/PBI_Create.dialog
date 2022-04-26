@@ -1,0 +1,107 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "YoRMFb",
+    "name": "PBI_Create",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "NeiTD0"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "PSNjTc"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_PSNjTc()}",
+          "property": "dialog.pbiName",
+          "defaultValue": "=\"Nobody lives here\"",
+          "value": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "pXeeOF"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_pXeeOF()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.workItemDescription",
+          "value": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "M123lY"
+          },
+          "activity": "${SendActivity_M123lY()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "XgfgYd"
+          },
+          "assignments": [
+            {
+              "property": "dialog.wi.title",
+              "value": "=dialog.pbiName"
+            },
+            {
+              "property": "dialog.wi.description",
+              "value": "=dialog.workItemDescription"
+            },
+            {
+              "property": "dialog.wi.type",
+              "value": "=conversation.workItemType"
+            },
+            {
+              "property": "dialog.wi.project",
+              "value": "='TestProject'"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "XaOmfV",
+            "comment": "Before I was testing with:\nhttps://webhook.site/187c1409-929f-4b4d-a9fe-b98f318a4f54\nNow: http://localhost:7071/api/WorkItemCreatorFunction"
+          },
+          "resultProperty": "turn.results",
+          "method": "POST",
+          "url": "https://30dd-161-0-156-220.ngrok.io/api/CreateWorkItem",
+          "body": "${dialog.wi}",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "aDa9zo"
+          },
+          "activity": "${SendActivity_aDa9zo()}"
+        }
+      ]
+    }
+  ],
+  "generator": "PBI_Create.lg",
+  "recognizer": "PBI_Create.lu.qna",
+  "id": "PBI_Create"
+}

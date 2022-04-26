@@ -1,0 +1,32 @@
+[import](common.lg)
+
+# TextInput_Prompt_PSNjTc()
+[Activity
+    Text = ${TextInput_Prompt_PSNjTc_text()}
+]
+
+# TextInput_Prompt_PSNjTc_text()
+- - What will your ${conversation.workItemType} be called?
+# SendActivity_M123lY()
+[Activity
+    Text = ${SendActivity_M123lY_text()}
+]
+
+# SendActivity_M123lY_text()
+- ```\- The name of the ${conversation.workItemType} will be ${dialog.pbiName} and it's trying to ${dialog.workitemDescription}.
+Going to save it now.```
+- - Saving ${conversation.workItemType}
+# TextInput_Prompt_pXeeOF()
+[Activity
+    Text = ${TextInput_Prompt_pXeeOF_text()}
+]
+
+# TextInput_Prompt_pXeeOF_text()
+- - What do you want to accomplish with this ${conversation.workItemType}. 
+# SendActivity_aDa9zo()
+[Activity
+    Text = ${SendActivity_aDa9zo_text()}
+]
+
+# SendActivity_aDa9zo_text()
+- - These are your results, ${turn.results}

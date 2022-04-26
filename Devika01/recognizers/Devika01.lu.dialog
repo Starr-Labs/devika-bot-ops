@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Devika01",
+  "recognizers": {
+    "en-us": "Devika01.en-us.lu",
+    "": "Devika01.en-us.lu"
+  }
+}

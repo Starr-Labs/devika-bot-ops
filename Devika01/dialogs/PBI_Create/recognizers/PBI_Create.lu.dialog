@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_PBI_Create",
+  "recognizers": {
+    "en-us": "PBI_Create.en-us.lu",
+    "": "PBI_Create.en-us.lu"
+  }
+}
