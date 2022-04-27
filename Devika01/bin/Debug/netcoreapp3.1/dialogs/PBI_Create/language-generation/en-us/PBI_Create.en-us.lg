@@ -13,7 +13,7 @@
 ]
 
 # SendActivity_M123lY_text()
-- ```\- The name of the ${conversation.workItemType} will be ${dialog.pbiName} and it's trying to ${dialog.workitemDescription}.
+- ```\- The name of the ${conversation.workItemType} will be ${dialog.workitemName} and it's trying to ${dialog.workitemDescription}.
 Going to save it now.```
 - - Saving ${conversation.workItemType}
 # TextInput_Prompt_pXeeOF()
@@ -29,4 +29,11 @@ Going to save it now.```
 ]
 
 # SendActivity_aDa9zo_text()
-- - These are your results, ${turn.results}
+- - These are your results, ${turn.results.content}
+# TextInput_Prompt_2wcXR0()
+[Activity
+    Text = ${TextInput_Prompt_2wcXR0_text()}
+]
+
+# TextInput_Prompt_2wcXR0_text()
+- Please provide the parent ID or Title

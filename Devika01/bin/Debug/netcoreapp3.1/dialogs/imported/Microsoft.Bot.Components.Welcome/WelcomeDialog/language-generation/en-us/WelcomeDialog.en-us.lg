@@ -46,3 +46,10 @@
 - - ok, only PBIs for now!
 - - sorry, only PBIs
 - - we';; support tasks and bugs in a while!
+# SendActivity_E1Dua3()
+[Activity
+    Text = ${SendActivity_E1Dua3_text()}
+]
+
+# SendActivity_E1Dua3_text()
+- - ${conversation.workItemType} to be created

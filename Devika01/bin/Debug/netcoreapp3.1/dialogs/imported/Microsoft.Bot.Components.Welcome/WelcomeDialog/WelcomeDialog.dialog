@@ -74,9 +74,9 @@
           "value": "=this.value",
           "style": "list",
           "choices": [
-            "pbi",
-            "bug",
-            "task"
+            "Product Backlog Item ",
+            "Bug",
+            "Task"
           ],
           "prompt": "${ChoiceInput_Prompt_FGfECP()}",
           "recognizerOptions": {
@@ -85,11 +85,18 @@
           "validations": []
         },
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "E1Dua3"
+          },
+          "activity": "${SendActivity_E1Dua3()}"
+        },
+        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "K3qAYy"
           },
-          "condition": "=conversation.workItemType == \"pbi\"",
+          "condition": "=true",
           "actions": [
             {
               "$kind": "Microsoft.BeginDialog",

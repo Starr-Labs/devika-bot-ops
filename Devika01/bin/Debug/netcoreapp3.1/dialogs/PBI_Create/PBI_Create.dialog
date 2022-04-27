@@ -2,7 +2,7 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "id": "YoRMFb",
-    "name": "PBI_Create",
+    "name": "WorkItem_Create",
     "comment": ""
   },
   "autoEndDialog": true,
@@ -28,7 +28,7 @@
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "prompt": "${TextInput_Prompt_PSNjTc()}",
-          "property": "dialog.pbiName",
+          "property": "dialog.workitemName",
           "defaultValue": "=\"Nobody lives here\"",
           "value": "=this.value"
         },
@@ -63,7 +63,7 @@
           "assignments": [
             {
               "property": "dialog.wi.title",
-              "value": "=dialog.pbiName"
+              "value": "=dialog.workitemName"
             },
             {
               "property": "dialog.wi.description",
@@ -80,6 +80,31 @@
           ]
         },
         {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "gLqv3C"
+          },
+          "condition": "=dialog.wi.type == \"Bug\" || dialog.wi.type == \"Task\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "2wcXR0"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_2wcXR0()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "dialog.wi.parent",
+              "value": "= this.value"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "XaOmfV",
@@ -87,7 +112,7 @@
           },
           "resultProperty": "turn.results",
           "method": "POST",
-          "url": "https://30dd-161-0-156-220.ngrok.io/api/CreateWorkItem",
+          "url": "https://77ef-161-0-156-220.ngrok.io/api/CreateWorkItem",
           "body": "${dialog.wi}",
           "contentType": "application/json"
         },
