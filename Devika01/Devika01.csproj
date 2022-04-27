@@ -23,9 +23,6 @@
     <PackageReference Include="Microsoft.Bot.Components.Welcome" Version="1.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Update="local.settings.json">
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </Content>
     <None Include="wwwroot/**/*.*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
