@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{E8CEE35F-DEBC-4213-8136-268FEF9D7C46}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Devika.AzureFunction/CreateWorkItem.cs">
+    <Files>
+      <File FileName="Devika.ConsoleApp/Devika.ConsoleApp.csproj" Line="7" Column="32" />
+      <File FileName="Devika.AzureFunction/Devika.cs" Line="36" Column="36" />
+      <File FileName="Devika.ConsoleApp/Devika.cs" Line="15" Column="24" />
+      <File FileName="Devika.AzureFunction/Devika.AzureFunction.csproj" Line="3" Column="28" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Devika01" expanded="True" selected="True">
+            <Node name="Devika.AzureFunction" expanded="True" />
+            <Node name="Devika.ConsoleApp" expanded="True" />
+            <Node name="Devika01" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Devika01 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Devika.AzureFunction PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
