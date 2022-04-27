@@ -351,3 +351,14 @@ C:/Development/Bots/Devika01/Devika01/bin/Debug/netcoreapp3.1/generated/interrup
 /Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/obj/Debug/netcoreapp3.1/Devika01.csproj.CopyComplete
 /Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/obj/Debug/netcoreapp3.1/Devika01.dll
 /Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/obj/Debug/netcoreapp3.1/Devika01.pdb
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/luis.settings.composer.westus.json
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/CancelDialog.en-us.lu
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/Devika01.en-us.lu
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/HelpDialog.en-us.lu
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/PBI_Create.en-us.lu
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/WelcomeDialog.en-us.lu
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/CancelDialog.en-us.qna
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/Devika01.en-us.qna
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/HelpDialog.en-us.qna
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/PBI_Create.en-us.qna
+/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/bin/Debug/netcoreapp3.1/generated/interruption/WelcomeDialog.en-us.qna
