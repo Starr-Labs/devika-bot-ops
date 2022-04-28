@@ -20,6 +20,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Devika.ConsoleApp\Devika.ConsoleApp.csproj" />
+    <ProjectReference Include="..\Devika.ClassLib\Devika.ClassLib.csproj" />
   </ItemGroup>
 </Project>
