@@ -12142,29 +12142,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/dannyg/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\responsible\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/Devika01.csproj",
+      "projectUniqueName": "C:\\Development\\Bots\\Devika01\\Devika01\\Devika01.csproj",
       "projectName": "Devika01",
-      "projectPath": "/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/Devika01.csproj",
-      "packagesPath": "/Users/dannyg/.nuget/packages/",
-      "outputPath": "/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/obj/",
+      "projectPath": "C:\\Development\\Bots\\Devika01\\Devika01\\Devika01.csproj",
+      "packagesPath": "C:\\Users\\responsible\\.nuget\\packages\\",
+      "outputPath": "C:\\Development\\Bots\\Devika01\\Devika01\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "/Users/dannyg/dev/repo/Hackathons/devika-bot-ops/Devika01/NuGet.Config",
-        "/Users/dannyg/.nuget/NuGet/NuGet.Config"
+        "C:\\Development\\Bots\\Devika01\\Devika01\\NuGet.Config",
+        "C:\\Users\\responsible\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
       },
@@ -12243,7 +12246,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.104/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -1,8 +1,5 @@
 {
     "luis": {
-        "WelcomeDialog_en_us_lu": {
-            "appId": "28c358c8-bf9e-456a-a34b-fd759c17c041"
-        },
         "Devika01_en_us_lu": {
             "appId": "01ba377d-3816-4352-91ca-1b036c3d9621"
         },

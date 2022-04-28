@@ -12,13 +12,5 @@
         "HelpDialog.en-us"
       ]
     }
-  },
-  "WelcomeDialog.en-us": {
-    "rootDialog": false,
-    "triggers": {
-      "": [
-        "PBI_Create.en-us"
-      ]
-    }
   }
 }

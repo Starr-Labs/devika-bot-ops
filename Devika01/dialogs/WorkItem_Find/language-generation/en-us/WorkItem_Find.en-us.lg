@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# TextInput_Prompt_rQ0c8R()
+[Activity
+    Text = ${TextInput_Prompt_rQ0c8R_text()}
+]
+
+# TextInput_Prompt_rQ0c8R_text()
+- Do you have a work item ID? Enter it. If not, do you remember the title of the work item, drop it here and we'll try to find it.

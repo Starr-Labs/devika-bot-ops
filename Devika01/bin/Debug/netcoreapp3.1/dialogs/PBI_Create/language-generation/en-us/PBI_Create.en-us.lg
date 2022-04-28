@@ -37,3 +37,10 @@ Going to save it now.```
 
 # TextInput_Prompt_2wcXR0_text()
 - Please provide the parent ID or Title
+# ChoiceInput_Prompt_44AsfX()
+[Activity
+    Text = ${ChoiceInput_Prompt_44AsfX_text()}
+]
+
+# ChoiceInput_Prompt_44AsfX_text()
+- What kind of workitem do you want to create?

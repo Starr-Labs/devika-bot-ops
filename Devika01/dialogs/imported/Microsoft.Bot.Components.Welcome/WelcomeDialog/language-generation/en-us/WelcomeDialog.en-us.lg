@@ -23,33 +23,10 @@
 - 🖐️ Hello! What do you want to do today?
 
 > Imported: ecb31044e0e5c0b54f49870e6872f158
-# ChoiceInput_Prompt_FGfECP()
+# ChoiceInput_Prompt_j9L5tw()
 [Activity
-    Text = ${ChoiceInput_Prompt_FGfECP_text()}
+    Text = ${ChoiceInput_Prompt_j9L5tw_text()}
 ]
 
-# ChoiceInput_Prompt_FGfECP_text()
-- What kind of work item do you want to create?
-# ChoiceInput_InvalidPrompt_FGfECP()
-[Activity
-    Text = ${ChoiceInput_InvalidPrompt_FGfECP_text()}
-]
-
-# ChoiceInput_InvalidPrompt_FGfECP_text()
-- Please entery a valid choice
-# SendActivity_jmPC7C()
-[Activity
-    Text = ${SendActivity_jmPC7C_text()}
-]
-
-# SendActivity_jmPC7C_text()
-- - ok, only PBIs for now!
-- - sorry, only PBIs
-- - we';; support tasks and bugs in a while!
-# SendActivity_E1Dua3()
-[Activity
-    Text = ${SendActivity_E1Dua3_text()}
-]
-
-# SendActivity_E1Dua3_text()
-- - ${conversation.workItemType} to be created
+# ChoiceInput_Prompt_j9L5tw_text()
+- Please choose an activity

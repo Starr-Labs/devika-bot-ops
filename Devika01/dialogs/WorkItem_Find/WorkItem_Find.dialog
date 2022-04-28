@@ -1,0 +1,41 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "r7PN1E",
+    "name": "WorkItem_Find",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "OSmq8D"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "rQ0c8R"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_rQ0c8R()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "conversation.workItemTitleFragment",
+          "value": "= this.value"
+        }
+      ]
+    }
+  ],
+  "generator": "WorkItem_Find.lg",
+  "recognizer": "WorkItem_Find.lu.qna",
+  "id": "WorkItem_Find"
+}

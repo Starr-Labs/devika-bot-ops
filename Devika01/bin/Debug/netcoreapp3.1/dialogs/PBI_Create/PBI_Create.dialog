@@ -17,6 +17,32 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "44AsfX"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_44AsfX()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true
+          },
+          "choices": [
+            "Product Backlog Item",
+            "Bug",
+            "Task"
+          ],
+          "style": "heroCard",
+          "value": "=this.value",
+          "property": "conversation.workItemType"
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "PSNjTc"
@@ -103,6 +129,15 @@
               "value": "= this.value"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "TCXyGX"
+          },
+          "name": "Constructed Work Item",
+          "valueType": "https://www.botframework.com/schemas/workitem",
+          "value": "=dialog.wi"
         },
         {
           "$kind": "Microsoft.HttpRequest",

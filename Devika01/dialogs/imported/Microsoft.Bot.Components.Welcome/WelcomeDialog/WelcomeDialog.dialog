@@ -54,66 +54,65 @@
         {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "FGfECP",
-            "comment": "What kind of work item do you want to create?"
+            "id": "j9L5tw"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_j9L5tw()}",
           "unrecognizedPrompt": "",
-          "invalidPrompt": "${ChoiceInput_InvalidPrompt_FGfECP()}",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+            "inlineOrMore": ", or "
           },
-          "property": "conversation.workItemType",
+          "property": "dialog.currentActivity",
           "value": "=this.value",
-          "style": "list",
+          "style": "heroCard",
           "choices": [
-            "Product Backlog Item ",
-            "Bug",
-            "Task"
-          ],
-          "prompt": "${ChoiceInput_Prompt_FGfECP()}",
-          "recognizerOptions": {
-            "recognizeOrdinals": true
-          },
-          "validations": []
+            "Make a workitem",
+            "Find workitems",
+            "Change a workitem"
+          ]
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "E1Dua3"
+            "id": "xbozpE"
           },
-          "activity": "${SendActivity_E1Dua3()}"
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "K3qAYy"
-          },
-          "condition": "=true",
-          "actions": [
+          "condition": "=dialog.currentActivity",
+          "cases": [
             {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
-                "id": "Q7ULNE"
-              },
-              "dialog": "PBI_Create",
-              "activityProcessed": false
-            }
-          ],
-          "elseActions": [
+              "value": "Make a workitem",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "yOjSgj"
+                  },
+                  "activityProcessed": false,
+                  "dialog": "PBI_Create"
+                }
+              ]
+            },
             {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "jmPC7C"
-              },
-              "activity": "${SendActivity_jmPC7C()}"
+              "value": "Find workitems",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "095Zy6"
+                  },
+                  "activityProcessed": false,
+                  "dialog": "WorkItem_Find"
+                }
+              ]
+            },
+            {
+              "value": "Change a workitem"
             }
           ]
         }
