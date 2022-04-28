@@ -362,3 +362,12 @@ C:\Development\Bots\Devika01\Devika01\obj\Debug\netcoreapp3.1\Devika01.csproj.Co
 C:\Development\Bots\Devika01\Devika01\obj\Debug\netcoreapp3.1\Devika01.csproj.CopyComplete
 C:\Development\Bots\Devika01\Devika01\obj\Debug\netcoreapp3.1\Devika01.dll
 C:\Development\Bots\Devika01\Devika01\obj\Debug\netcoreapp3.1\Devika01.pdb
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\recognizers\WorkItem_Find.en-us.lu.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\recognizers\WorkItem_Find.lu.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\recognizers\WorkItem_Find.lu.qna.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\WorkItem_Find.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\language-generation\en-us\WorkItem_Find.en-us.lg
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\language-understanding\en-us\WorkItem_Find.en-us.lu
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\generated\interruption\WorkItem_Find.en-us.lu
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Find\knowledge-base\en-us\WorkItem_Find.en-us.qna
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\generated\interruption\WorkItem_Find.en-us.qna

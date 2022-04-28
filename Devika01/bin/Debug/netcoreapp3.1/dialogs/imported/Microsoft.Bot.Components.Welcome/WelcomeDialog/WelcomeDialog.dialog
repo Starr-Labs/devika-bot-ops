@@ -99,7 +99,17 @@
               ]
             },
             {
-              "value": "Find workitems"
+              "value": "Find workitems",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "095Zy6"
+                  },
+                  "activityProcessed": false,
+                  "dialog": "WorkItem_Find"
+                }
+              ]
             },
             {
               "value": "Change a workitem"

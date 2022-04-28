@@ -16,15 +16,16 @@ namespace Devika.ClassLib
             Connection = new(orgUrl, new VssBasicCredential(string.Empty, personalAccessToken));
         }
 
-        public async Task ShowWorkItemDetails(int workItemId)
+        public async Task<WorkItem> ShowWorkItemDetails(int workItemId)
         {
+            WorkItem workitem = null;
             // Get an instance of the work item tracking client
             WorkItemTrackingHttpClient witClient = Connection.GetClient<WorkItemTrackingHttpClient>();
 
             try
             {
                 // Get the specified work item
-                WorkItem workitem = await witClient.GetWorkItemAsync(workItemId);
+                workitem = await witClient.GetWorkItemAsync(workItemId);
 
                 // Output the work item's field values
                 foreach (var field in workitem.Fields)
@@ -40,6 +41,8 @@ namespace Devika.ClassLib
                     Console.WriteLine(vssex.Message);
                 }
             }
+
+            return workitem;
         }
 
 
@@ -90,10 +93,20 @@ namespace Devika.ClassLib
             return results;
         }
 
-        public void QueryPbiByString(string word)
+        public async Task<List<WorkItemReference>> FindWorkItemByTitle(string titleFragment)
         {
+            var teamProjectName = "DevOps";
             // Get a client
             WorkItemTrackingHttpClient witClient = Connection.GetClient<WorkItemTrackingHttpClient>();
+            // use client to query for work items by title
+            WorkItemQueryResult workItemQueryResult = await witClient.QueryByWiqlAsync(new Wiql()
+            {
+                Query = $"Select [System.Id], [System.Title] From WorkItems Where [System.TeamProject] = '{teamProjectName}'"+
+                " AND [System.State] <> 'Removed' AND [System.Title] LIKE '%" + titleFragment + "%'"
+            });
+            // convert result to list of work items
+            var workItems = workItemQueryResult.WorkItems.ToList();
+            return workItems;
         }
     }
 
