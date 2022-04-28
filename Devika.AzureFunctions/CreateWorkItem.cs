@@ -4,10 +4,10 @@ using System.IO;
 using System.Net;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using Devika.ConsoleApp;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Configuration;
+using Devika.ClassLib;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
@@ -34,7 +34,7 @@ namespace Devika.DevOps.WorkItems
             string type = data.type;
             string title = data.title;
 
-            ConsoleApp.Devika devika = new(new Uri(Environment.GetEnvironmentVariable("OrgUrl")) , Environment.GetEnvironmentVariable("Pat"));
+            Devika.ClassLib.Devika devika = new(new Uri(Environment.GetEnvironmentVariable("OrgUrl")) , Environment.GetEnvironmentVariable("Pat"));
 
             response.WriteString(devika.CreateNewWorkItem(project, title, type));
 
