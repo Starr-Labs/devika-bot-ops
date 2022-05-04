@@ -170,6 +170,37 @@
           "activityProcessed": true
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lMj2WJ",
+        "name": "WorkItem_Create_Trigger"
+      },
+      "intent": "WorkItem_Create_Trigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "HyRFMp"
+          },
+          "activity": "${SendActivity_HyRFMp()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "5l4ExZ"
+          },
+          "activityProcessed": true,
+          "dialog": "PBI_Create"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "iid0of"
+          }
+        }
+      ]
     }
   ],
   "generator": "Devika01.lg",

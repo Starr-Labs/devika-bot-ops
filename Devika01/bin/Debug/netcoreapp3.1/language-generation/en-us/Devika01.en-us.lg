@@ -27,6 +27,13 @@
 ]
 
 # SendActivity_LpqYfK_text()
-- - Toodles!
-- - Goodbye
-- - Have a great day!
+- Toodles!
+- Goodbye
+- Have a great day!
+# SendActivity_HyRFMp()
+[Activity
+    Text = ${SendActivity_HyRFMp_text()}
+]
+
+# SendActivity_HyRFMp_text()
+- About to create new work item from trigger!

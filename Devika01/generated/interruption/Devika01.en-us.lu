@@ -47,7 +47,23 @@
 - take it easy
 
 
+# WorkItem_Create_Trigger
+- make a @workitemtype called @workitemname
+- make a @workitemtype called @workitemname that @workitemdescription
+- make a @workitemtype called @workitemname that @workitemdescription linked to @workitemrelated
+- I want to make a @workitemtype called @workitemname
+- Please give me a @workitemtype
+
+
 > # Entity definitions
+
+@ ml @workitemtype
+
+@ ml @workitemname
+
+@ ml @workitemdescription
+
+@ ml @workitemrelated
 
 
 > # PREBUILT Entity definitions

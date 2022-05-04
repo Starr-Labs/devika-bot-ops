@@ -11,7 +11,10 @@
       "Help": [
         "HelpDialog.en-us"
       ],
-      "Goodbye": ""
+      "Goodbye": "",
+      "WorkItem_Create_Trigger": [
+        "PBI_Create.en-us"
+      ]
     }
   }
 }
