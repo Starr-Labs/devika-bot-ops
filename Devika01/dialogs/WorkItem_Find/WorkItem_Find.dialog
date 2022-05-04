@@ -31,6 +31,76 @@
           "defaultValueResponse": "",
           "property": "conversation.workItemTitleFragment",
           "value": "= this.value"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "FKh63s"
+          },
+          "resultProperty": "turn.results",
+          "method": "GET",
+          "url": "http://localhost:7071/api/FindWorkItem?title=${conversation.workItemTitleFragment}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "ynUK3N"
+          },
+          "property": "conversation.foundItems",
+          "value": "= turn.results.content"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "WlqmWI"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "conversation.foundItems",
+          "actions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "sKWNFi"
+              },
+              "changeType": "push",
+              "itemsProperty": "conversation.foundItemsSimple",
+              "value": "=dialog.foreach.value.Id +\": \"+ dialog.foreach.value.Title",
+              "resultProperty": "conversation.foundItemsSimpleResult"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "1svNZm"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_1svNZm()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "conversation.foundWorkItem",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "choices": "= conversation.foundItemsSimple"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MQwkEI"
+          },
+          "activity": "${SendActivity_MQwkEI()}"
         }
       ]
     }

@@ -30,3 +30,10 @@
 
 # ChoiceInput_Prompt_j9L5tw_text()
 - Please choose an activity
+# ConfirmInput_Prompt_kv3UzU()
+[Activity
+    Text = ${ConfirmInput_Prompt_kv3UzU_text()}
+]
+
+# ConfirmInput_Prompt_kv3UzU_text()
+- - Have a great day!

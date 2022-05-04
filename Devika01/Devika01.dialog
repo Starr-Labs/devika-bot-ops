@@ -146,6 +146,30 @@
           "activity": "${SendActivity_DidNotUnderstand()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lvCqtW",
+        "name": "Goodbye"
+      },
+      "intent": "Goodbye",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "LpqYfK"
+          },
+          "activity": "${SendActivity_LpqYfK()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "uX8xZr"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "generator": "Devika01.lg",

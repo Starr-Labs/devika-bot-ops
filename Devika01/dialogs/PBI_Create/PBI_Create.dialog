@@ -147,7 +147,7 @@
           },
           "resultProperty": "turn.results",
           "method": "POST",
-          "url": "https://77ef-161-0-156-220.ngrok.io/api/CreateWorkItem",
+          "url": "http://localhost:7071/api/CreateWorkItem",
           "body": "${dialog.wi}",
           "contentType": "application/json"
         },

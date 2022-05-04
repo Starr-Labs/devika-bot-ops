@@ -20,7 +20,6 @@ namespace Devika.DevOps.WorkItems
             FunctionContext executionContext)
         {
             var logger = executionContext.GetLogger("CreateWorkItem");
-            logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
@@ -34,9 +33,16 @@ namespace Devika.DevOps.WorkItems
             string type = data.type;
             string title = data.title;
 
-            Devika.ClassLib.Devika devika = new(new Uri(Environment.GetEnvironmentVariable("OrgUrl")) , Environment.GetEnvironmentVariable("Pat"));
+            logger.LogInformation($"Going to make a new {type} for {project} with title {title}");
 
-            response.WriteString(devika.CreateNewWorkItem(project, title, type));
+
+            Devika.ClassLib.Devika devika = new(
+                new Uri(Environment.GetEnvironmentVariable("OrgUrl")) , 
+                Environment.GetEnvironmentVariable("Pat"));
+
+            var result = await devika.CreateNewWorkItem(project, title, type);
+
+            response.WriteString(result);
 
             return response;
         }

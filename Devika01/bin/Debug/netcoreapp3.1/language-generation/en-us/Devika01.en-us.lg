@@ -20,3 +20,13 @@
 - I'm not sure I understand. Can you please try again?
 - Hmm, I don't understand. Can you try to ask me in a different way. 
 - I didn't get that. Would you mind rephrasing and try it again.
+
+# SendActivity_LpqYfK()
+[Activity
+    Text = ${SendActivity_LpqYfK_text()}
+]
+
+# SendActivity_LpqYfK_text()
+- - Toodles!
+- - Goodbye
+- - Have a great day!

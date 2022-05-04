@@ -7,3 +7,17 @@
 
 # TextInput_Prompt_rQ0c8R_text()
 - Do you have a work item ID? Enter it. If not, do you remember the title of the work item, drop it here and we'll try to find it.
+# ChoiceInput_Prompt_1svNZm()
+[Activity
+    Text = ${ChoiceInput_Prompt_1svNZm_text()}
+]
+
+# ChoiceInput_Prompt_1svNZm_text()
+- Please select work item
+# SendActivity_MQwkEI()
+[Activity
+    Text = ${SendActivity_MQwkEI_text()}
+]
+
+# SendActivity_MQwkEI_text()
+- - Selected work item ${conversation.foundWorkItem}

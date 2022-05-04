@@ -44,7 +44,9 @@ namespace Devika.DevOps.WorkItems
             
             
             //search for work item by title
-            Devika.ClassLib.Devika devika = new(new Uri(Environment.GetEnvironmentVariable("OrgUrl")) , Environment.GetEnvironmentVariable("Pat"));
+            Devika.ClassLib.Devika devika = new(new Uri(
+                Environment.GetEnvironmentVariable("OrgUrl")) , 
+                Environment.GetEnvironmentVariable("Pat"));
             var items = await devika.FindWorkItemByTitle(title);
             if (null != items)
             {

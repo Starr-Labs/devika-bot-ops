@@ -46,7 +46,7 @@ namespace Devika.ClassLib
         }
 
 
-        public string CreateNewWorkItem(string project, string title, string type)
+        public async Task<string> CreateNewWorkItem(string project, string title, string type)
         {
             // Construct the object containing field values required for the new work item
             JsonPatchDocument patchDocument = new()
@@ -64,7 +64,8 @@ namespace Devika.ClassLib
             try
             {
                 // Create the new work item
-                WorkItem newWorkItem = witClient.CreateWorkItemAsync(patchDocument, project, type).Result;
+                WorkItem newWorkItem = await witClient.CreateWorkItemAsync(patchDocument, 
+                    project, type);
 
                 string result = String.Format("Created a '{0}' work item ID '{1}' Title '{2}'", type, newWorkItem.Id, newWorkItem.Fields["System.Title"]);
                 Console.WriteLine(result);
@@ -93,20 +94,35 @@ namespace Devika.ClassLib
             return results;
         }
 
-        public async Task<List<WorkItemReference>> FindWorkItemByTitle(string titleFragment)
+        public async Task<List<dynamic>> FindWorkItemByTitle(string titleFragment)
         {
-            var teamProjectName = "DevOps";
+            var teamProjectName = "TestProject";
             // Get a client
             WorkItemTrackingHttpClient witClient = Connection.GetClient<WorkItemTrackingHttpClient>();
             // use client to query for work items by title
             WorkItemQueryResult workItemQueryResult = await witClient.QueryByWiqlAsync(new Wiql()
             {
-                Query = $"Select [System.Id], [System.Title] From WorkItems Where [System.TeamProject] = '{teamProjectName}'"+
-                " AND [System.State] <> 'Removed' AND [System.Title] LIKE '%" + titleFragment + "%'"
+                Query = $"Select * From WorkItems Where [System.TeamProject] = '{teamProjectName}'"+
+                " AND [System.State] <> 'Removed' AND [System.Title] contains '" + titleFragment + "'"
             });
             // convert result to list of work items
-            var workItems = workItemQueryResult.WorkItems.ToList();
-            return workItems;
+            var workItemReferences = workItemQueryResult.WorkItems.ToList();
+            // get list of work item fields from list of work item references
+            var workItemDetails = new List<dynamic>();
+            foreach (var workItemReference in workItemReferences)
+            {
+                var workItem = await witClient.GetWorkItemAsync(workItemReference.Id);
+                dynamic workItemDetail = new
+                {
+                    Id = workItem.Id,
+                    Title = workItem.Fields["System.Title"],
+                    State = workItem.Fields["System.State"],
+                    Description = workItem.Fields["System.Description"]
+                };
+                workItemDetails.Add(workItemDetail);
+            }
+
+            return workItemDetails;
         }
     }
 
