@@ -376,3 +376,12 @@ C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\bin\Bot.Builder.Co
 C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\bin\Bot.Builder.Community.Components.Shared.dll
 C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\bin\Microsoft.MarkedNet.dll
 C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\bin\System.ComponentModel.Annotations.dll
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\recognizers\WorkItem_Update.en-us.lu.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\recognizers\WorkItem_Update.lu.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\recognizers\WorkItem_Update.lu.qna.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\WorkItem_Update.dialog
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\language-generation\en-us\WorkItem_Update.en-us.lg
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\language-understanding\en-us\WorkItem_Update.en-us.lu
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\generated\interruption\WorkItem_Update.en-us.lu
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\dialogs\WorkItem_Update\knowledge-base\en-us\WorkItem_Update.en-us.qna
+C:\Development\Bots\Devika01\Devika01\bin\Debug\netcoreapp3.1\generated\interruption\WorkItem_Update.en-us.qna

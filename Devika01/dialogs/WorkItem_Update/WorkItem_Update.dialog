@@ -1,0 +1,66 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "IQ1cBH",
+    "name": "WorkItem_Update",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "egioFp"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "WnzUUT"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_WnzUUT()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.workItemID",
+          "value": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "NDjiYK"
+          },
+          "resultProperty": "turn.results",
+          "method": "GET",
+          "url": "http://localhost:7071/api/GetWorkItemDetail?id=${dialog.workItemID}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "L6XYnS"
+          },
+          "property": "turn.wi",
+          "value": "=turn.results.content"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "OPjlPP"
+          },
+          "activity": "${SendActivity_OPjlPP()}"
+        }
+      ]
+    }
+  ],
+  "generator": "WorkItem_Update.lg",
+  "recognizer": "WorkItem_Update.lu.qna",
+  "id": "WorkItem_Update"
+}

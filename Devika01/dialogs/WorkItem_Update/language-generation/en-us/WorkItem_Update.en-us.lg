@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# NumberInput_Prompt_WnzUUT()
+[Activity
+    Text = ${NumberInput_Prompt_WnzUUT_text()}
+]
+
+# NumberInput_Prompt_WnzUUT_text()
+- Please share the workitem ID number, if you don't know it, you could always attempt to find it and then come back
+# SendActivity_OPjlPP()
+[Activity
+    Attachments = ${SendActivity_OPjlPP_attachment_6uDqEo()}
+]
+
+# SendActivity_OPjlPP_attachment_6uDqEo()
+[HeroCard
+  title = ${turn.wi.Title}
+  subtitle = ${turn.wi.Type}
+  text = ${turn.wi.Description}
+]

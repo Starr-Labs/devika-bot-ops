@@ -185,6 +185,13 @@
                 "id": "od1sa2"
               },
               "activity": "${SendActivity_od1sa2()}"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "Sd5leQ"
+              },
+              "property": "conversation.foundItemsSimple"
             }
           ]
         },
