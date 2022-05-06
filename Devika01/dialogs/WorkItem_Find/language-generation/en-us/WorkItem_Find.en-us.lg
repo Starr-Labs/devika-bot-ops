@@ -13,11 +13,22 @@
 ]
 
 # ChoiceInput_Prompt_1svNZm_text()
-- Please select work item
-# SendActivity_MQwkEI()
+- Please select work item or you can choose to search again.
+# SendActivity_JLX12F()
 [Activity
-    Text = ${SendActivity_MQwkEI_text()}
+    Text = ${SendActivity_JLX12F_text()}
 ]
 
-# SendActivity_MQwkEI_text()
-- - Selected work item ${conversation.foundWorkItem}
+# SendActivity_JLX12F_text()
+- Sorry, didn't find anything matching your criteria
+# SendActivity_od1sa2()
+[Activity
+    Attachments = ${SendActivity_od1sa2_attachment_WVKevW()}
+]
+
+# SendActivity_od1sa2_attachment_WVKevW()
+[HeroCard
+  title = ${turn.wi.Title}
+  subtitle = ${turn.wi.Type}
+  text = ${turn.wi.Description}
+]

@@ -64,19 +64,23 @@
           "prompt": "${ChoiceInput_Prompt_j9L5tw()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or "
-          },
           "property": "dialog.currentActivity",
           "value": "=this.value",
           "style": "heroCard",
           "choices": [
-            "Make a workitem",
-            "Find workitems",
-            "Change a workitem"
-          ]
+            "Make",
+            "Find",
+            "Change"
+          ],
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -86,7 +90,7 @@
           "condition": "=dialog.currentActivity",
           "cases": [
             {
-              "value": "Make a workitem",
+              "value": "Make",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -99,7 +103,7 @@
               ]
             },
             {
-              "value": "Find workitems",
+              "value": "Find",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -112,7 +116,7 @@
               ]
             },
             {
-              "value": "Change a workitem"
+              "value": "Change"
             }
           ]
         },

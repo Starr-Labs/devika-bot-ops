@@ -35,14 +35,66 @@
 - take it easy
 
 # WorkItem_Create_Trigger
-- make a @workitemtype called @workitemname
-- make a @workitemtype called @workitemname that @workitemdescription
-- make a @workitemtype called @workitemname that @workitemdescription linked to @workitemrelated
-- I want to make a @workitemtype called @workitemname
-- Please give me a @workitemtype
+- make a {workitemtype=Product Backlog Item}
+- make a {workitemtype=PBI}
+- make a {workitemtype=Task}
+- make a {workitemtype=Bug}
+- new {workitemtype=Product Backlog Item}
+- new {workitemtype=PBI}
+- new {workitemtype=Bug}
+- new {workitemtype=Task}
+
+
+
+- make a {workitemtype=Product Backlog Item} called {workitemname=Research}
+- make a {workitemtype=Product Backlog Item} called {workitemname=User sign up}
+- make a {workitemtype=Product Backlog Item} called {workitemname=Support diverse channels}
+- make a {workitemtype=Product Backlog Item} called {workitemname=Find new names}
+- make a {workitemtype=PBI} called {workitemname=Research}
+- make a {workitemtype=PBI} called {workitemname=User sign up}
+- make a {workitemtype=PBI} called {workitemname=Support diverse channels}
+- make a {workitemtype=PBI} called {workitemname=Find new names}
+
+
+- make a {workitemtype=Bug} called {workitemname=Error in form} that {workitemdescription=causes the form to load badly}
+- make a {workitemtype=Bug} called {workitemname=Missing values} that {workitemdescription=is missing values}
+- make a {workitemtype=Bug} called {workitemname=Exception in production} that {workitemdescription=is happening when the user clicks}
+- make a {workitemtype=Bug} called {workitemname=Bad username} that {workitemdescription=is causing the username to fail}
+- make a {workitemtype=Bug} called {workitemname=Unknown} that {workitemdescription=is hard to reproduce}
+
+- make a {workitemtype=Task} called {workitemname=Load users} that {workitemdescription=will load all the test users} and is linked to {workitemrelated=265}
+- make a {workitemtype=Task} called {workitemname=Research channels} that {workitemdescription=find out which channels to use} and is linked to {workitemrelated=300}
+- make a {workitemtype=Task} called {workitemname=Complete documentation} that {workitemdescription=complete all documentation} and is linked to {workitemrelated=18}
+- make a {workitemtype=Task} called {workitemname=Create unit tests} that {workitemdescription=will test using unit tests} and is linked to {workitemrelated=2605}
+- Please give me a {workitemtype=Task}
+- Please give me a {workitemtype=Bug}
+- Please give me a {workitemtype=Product Backlog Item}
+- Please give me a {workitemtype=PBI}
 
 > entity definitions:
 @ ml @workitemtype
 @ ml @workitemname
 @ ml @workitemdescription
 @ ml @workitemrelated
+
+
+# WorkItem_Find_Trigger
+- find
+- search
+- look up
+- lookup
+- find again
+- search again
+- find using title {titlefragment=test 02}
+- search using title {titlefragment=test 02}
+- look up using title {titlefragment=test 02}
+- lookup using title {titlefragment=test 02}
+- find again using title {titlefragment=test 02}
+- search again using title {titlefragment=test 02}
+- find with description {descriptionfragment=a longer description}
+- search with description {descriptionfragment=another longer description}
+
+
+> entity definitions:
+@ ml @titlefragment
+@ ml @descriptionfragment

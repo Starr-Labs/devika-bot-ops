@@ -32,15 +32,22 @@ namespace Devika.DevOps.WorkItems
             string project = data.project;
             string type = data.type;
             string title = data.title;
+            if (type.ToLower() == "pbi")
+            {
+                type = "Product Backlog Item";
+            }
+            string description = data.description;
+            string parentId = data.parentId;
 
-            logger.LogInformation($"Going to make a new {type} for {project} with title {title}");
+            logger.LogInformation($"Going to make a new {type} for "+
+                $"{project} with title {title} and parent {parentId}");
 
 
             Devika.ClassLib.Devika devika = new(
                 new Uri(Environment.GetEnvironmentVariable("OrgUrl")) , 
                 Environment.GetEnvironmentVariable("Pat"));
 
-            var result = await devika.CreateNewWorkItem(project, title, type);
+            var result = await devika.CreateNewWorkItem(project, title, type, description, parentId);
 
             response.WriteString(result);
 

@@ -12,8 +12,14 @@
         "HelpDialog.en-us"
       ],
       "Goodbye": "",
-      "WorkItem_Create_Trigger": [
-        "PBI_Create.en-us"
+      "WorkItem_Find_Trigger": ""
+    }
+  },
+  "WelcomeDialog.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "WorkItem_Find.en-us"
       ]
     }
   }

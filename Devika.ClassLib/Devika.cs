@@ -46,7 +46,8 @@ namespace Devika.ClassLib
         }
 
 
-        public async Task<string> CreateNewWorkItem(string project, string title, string type)
+        public async Task<string> CreateNewWorkItem(string project, 
+            string title, string type, string description, string parentId)
         {
             // Construct the object containing field values required for the new work item
             JsonPatchDocument patchDocument = new()
@@ -56,9 +57,33 @@ namespace Devika.ClassLib
                     Operation = Operation.Add,
                     Path = "/fields/System.Title",
                     Value = title
+                },
+                new JsonPatchOperation()
+                {
+                    Operation = Operation.Add,
+                    Path = "/fields/System.Description",
+                    Value = title
                 }
             };
-
+            
+            if (null != parentId)
+            {
+                patchDocument.Add(//json patch operation to add a new link to the work item
+                new JsonPatchOperation()
+                {
+                    Operation = Operation.Add,
+                    Path = "/relations/-",
+                    Value = new
+                    {
+                        rel = "System.LinkTypes.Related",
+                        url = $"https://dev.azure.com/{project}/_apis/wit/workItems/{parentId}",
+                        attributes = new
+                        {
+                            comment = "Created by Devika"
+                        }
+                    }
+                });
+            }
             WorkItemTrackingHttpClient witClient = Connection.GetClient<WorkItemTrackingHttpClient>();
 
             try
@@ -111,7 +136,7 @@ namespace Devika.ClassLib
             var workItemDetails = new List<dynamic>();
             foreach (var workItemReference in workItemReferences)
             {
-                var workItem = await witClient.GetWorkItemAsync(workItemReference.Id);
+                dynamic workItem = await witClient.GetWorkItemAsync(workItemReference.Id);
                 dynamic workItemDetail = new
                 {
                     Id = workItem.Id,
@@ -124,6 +149,39 @@ namespace Devika.ClassLib
 
             return workItemDetails;
         }
+    
+        public async Task<dynamic> FindWorkItemById(string id)
+        {
+            var teamProjectName = "TestProject";
+            // Get a client
+            WorkItemTrackingHttpClient witClient = Connection.GetClient<WorkItemTrackingHttpClient>();
+            // use client to query for work items by title
+            WorkItemQueryResult workItemQueryResult = await witClient.QueryByWiqlAsync(new Wiql()
+            {
+                Query = $"Select * From WorkItems Where [System.TeamProject] = '{teamProjectName}'"+
+                " AND [System.State] <> 'Removed' AND ID = " + id + ""
+            });
+            // convert result to list of work items
+            var workItemReferences = workItemQueryResult.WorkItems.ToList();
+            // get list of work item fields from list of work item references
+            var workItemDetails = new List<dynamic>();
+            foreach (var workItemReference in workItemReferences)
+            {
+                dynamic workItem = await witClient.GetWorkItemAsync(workItemReference.Id);
+                dynamic workItemDetail = new
+                {
+                    Id = workItem.Id,
+                    Title = workItem.Fields["System.Title"],
+                    State = workItem.Fields["System.State"],
+                    Type = workItem.Fields["System.WorkItemType"],
+                    Description = workItem.Fields["System.Description"]
+                };
+                workItemDetails.Add(workItemDetail);
+            }
+
+            return workItemDetails[0];
+        }
+    
     }
 
 

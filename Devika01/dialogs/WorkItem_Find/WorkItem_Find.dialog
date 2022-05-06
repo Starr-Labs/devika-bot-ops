@@ -17,6 +17,13 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "lomQcU"
+          },
+          "property": "conversation.foundWorkItem"
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "rQ0c8R"
@@ -40,6 +47,28 @@
           "resultProperty": "turn.results",
           "method": "GET",
           "url": "http://localhost:7071/api/FindWorkItem?title=${conversation.workItemTitleFragment}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "JyVL2C"
+          },
+          "condition": "=turn.results.content.count == 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "JLX12F"
+              },
+              "activity": "${SendActivity_JLX12F()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "OpeWvS"
+              }
+            }
+          ]
         },
         {
           "$kind": "Microsoft.SetProperty",
@@ -71,6 +100,15 @@
           ]
         },
         {
+          "$kind": "Microsoft.EditArray",
+          "$designer": {
+            "id": "iZH9MM"
+          },
+          "changeType": "push",
+          "itemsProperty": "conversation.foundItemsSimple",
+          "value": "nevermind"
+        },
+        {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
             "id": "1svNZm"
@@ -79,9 +117,8 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "unrecognizedPrompt": "",
-          "invalidPrompt": "",
           "prompt": "${ChoiceInput_Prompt_1svNZm()}",
           "choiceOptions": {
             "includeNumbers": true,
@@ -91,16 +128,72 @@
           },
           "property": "conversation.foundWorkItem",
           "recognizerOptions": {
-            "recognizeOrdinals": true
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
           },
           "choices": "= conversation.foundItemsSimple"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "MQwkEI"
+            "id": "hqfQ9y"
           },
-          "activity": "${SendActivity_MQwkEI()}"
+          "condition": "=conversation.foundWorkItem==\"nevermind\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "QoRR5T"
+              },
+              "property": "conversation.workItemTitleFragment"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "mkmjv7"
+              },
+              "property": "conversation.foundWorkItem"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "zanmYO"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "dMmNaM"
+              },
+              "resultProperty": "turn.results",
+              "method": "GET",
+              "url": "http://localhost:7071/api/GetWorkItemDetail?id=${conversation.foundWorkItem}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "1FMuq0"
+              },
+              "property": "turn.wi",
+              "value": "=turn.results.content"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "od1sa2"
+              },
+              "activity": "${SendActivity_od1sa2()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "JhoF6s"
+          },
+          "property": "conversation.workItemTitleFragment"
         }
       ]
     }

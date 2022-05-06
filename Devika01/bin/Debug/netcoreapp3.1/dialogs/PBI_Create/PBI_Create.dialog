@@ -31,15 +31,18 @@
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
           },
           "choices": [
-            "Product Backlog Item",
+            "PBI",
             "Bug",
             "Task"
           ],
           "style": "heroCard",
-          "value": "=this.value",
+          "value": "=coalesce(this.value, @workitemType)",
           "property": "conversation.workItemType"
         },
         {
@@ -157,11 +160,23 @@
             "id": "aDa9zo"
           },
           "activity": "${SendActivity_aDa9zo()}"
+        },
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "yTrjoR"
+          },
+          "properties": [
+            "conversation.workItemType"
+          ]
         }
       ]
     }
   ],
   "generator": "PBI_Create.lg",
-  "recognizer": "PBI_Create.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
   "id": "PBI_Create"
 }

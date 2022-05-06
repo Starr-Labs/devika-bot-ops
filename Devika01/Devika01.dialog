@@ -180,6 +180,35 @@
       "intent": "WorkItem_Create_Trigger",
       "actions": [
         {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "zJN249"
+          },
+          "assignments": [
+            {
+              "property": "conversation.workItemType",
+              "value": "=@workitemtype"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "VyKJSv"
+          },
+          "condition": "=toLowerCase(conversation.workItemType) == \"pbi\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "hS5Rmg"
+              },
+              "property": "conversation.workItemType",
+              "value": "=\"Product Backlog Item\""
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "HyRFMp"
@@ -199,6 +228,33 @@
           "$designer": {
             "id": "iid0of"
           }
+        }
+      ],
+      "condition": "=turn.recognized.score > 0.9"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "RynqXY",
+        "name": "WorkItem_Find_Trigger"
+      },
+      "intent": "WorkItem_Find_Trigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "1FkZf5"
+          },
+          "property": "conversation.workItemTitleFragment",
+          "value": "=@titlefragment"
+        },
+        {
+          "$kind": "Microsoft.ReplaceDialog",
+          "$designer": {
+            "id": "H4zpXB"
+          },
+          "activityProcessed": true,
+          "dialog": "WorkItem_Find"
         }
       ]
     }
