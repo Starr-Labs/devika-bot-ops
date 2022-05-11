@@ -192,6 +192,14 @@
           ]
         },
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "pJ8r0d"
+          },
+          "property": "conversation.workItemName",
+          "value": "=@workitemname"
+        },
+        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "VyKJSv"
@@ -207,13 +215,6 @@
               "value": "=\"Product Backlog Item\""
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "HyRFMp"
-          },
-          "activity": "${SendActivity_HyRFMp()}"
         },
         {
           "$kind": "Microsoft.BeginDialog",
@@ -256,7 +257,8 @@
           "activityProcessed": true,
           "dialog": "WorkItem_Find"
         }
-      ]
+      ],
+      "condition": "=turn.condition > 0.7"
     }
   ],
   "generator": "Devika01.lg",

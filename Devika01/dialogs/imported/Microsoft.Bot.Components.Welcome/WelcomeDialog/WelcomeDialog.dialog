@@ -52,6 +52,97 @@
           ]
         },
         {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "IVZVtN"
+          },
+          "condition": "=true",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "WQCMsy"
+              },
+              "activity": "${SendActivity_WQCMsy()}"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "xJgDYc"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${TextInput_Prompt_xJgDYc()}",
+              "property": "user.organizationUrl",
+              "value": "=this.value"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "gO4JRk"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${TextInput_Prompt_gO4JRk()}",
+              "property": "user.teamProject",
+              "value": "=this.value"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "p07bQu"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${TextInput_Prompt_p07bQu()}",
+              "property": "user.personalAccessToken",
+              "value": "=this.value"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "XPqMDs"
+              },
+              "assignments": [
+                {
+                  "property": "user.project.pat",
+                  "value": "user.personalAccessToken"
+                },
+                {
+                  "property": "user.project.orgUrl",
+                  "value": "user.organizationUrl"
+                },
+                {
+                  "property": "user.project.name",
+                  "value": "user.teamProject"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "M6l9J2"
+              },
+              "activity": "${SendActivity_M6l9J2()}"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
             "id": "j9L5tw"

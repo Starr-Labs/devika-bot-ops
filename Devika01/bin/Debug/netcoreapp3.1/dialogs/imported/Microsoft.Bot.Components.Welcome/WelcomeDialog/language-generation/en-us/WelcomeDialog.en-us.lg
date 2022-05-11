@@ -3,6 +3,7 @@
 # SendActivity_WelcomeReturningUser()
 [Activity
     Text = ${SendActivity_WelcomeReturningUser_text()}
+    Speak = ${SendActivity_WelcomeReturningUser_speak()}
 ]
 
 # SendActivity_WelcomeReturningUser_text()
@@ -15,6 +16,7 @@
 # SendActivity_WelcomeNewUser()
 [Activity
     Text = ${SendActivity_WelcomeNewUser_text()}
+    Speak = ${SendActivity_WelcomeNewUser_speak()}
 ]
 
 # SendActivity_WelcomeNewUser_text()
@@ -26,6 +28,7 @@
 # ChoiceInput_Prompt_j9L5tw()
 [Activity
     Text = ${ChoiceInput_Prompt_j9L5tw_text()}
+    Speak = ${ChoiceInput_Prompt_j9L5tw_speak()}
 ]
 
 # ChoiceInput_Prompt_j9L5tw_text()
@@ -37,3 +40,44 @@
 
 # ConfirmInput_Prompt_kv3UzU_text()
 - - Have a great day!
+# SendActivity_WQCMsy()
+[Activity
+    Text = ${SendActivity_WQCMsy_text()}
+]
+
+# SendActivity_WQCMsy_text()
+- Hi there, we need a few things from you to be able to work on Azure DevOps on your behalf.
+# TextInput_Prompt_gO4JRk()
+[Activity
+    Text = ${TextInput_Prompt_gO4JRk_text()}
+]
+
+# TextInput_Prompt_gO4JRk_text()
+- What's the name of the Team Project?
+# TextInput_Prompt_p07bQu()
+[Activity
+    Text = ${TextInput_Prompt_p07bQu_text()}
+]
+
+# TextInput_Prompt_p07bQu_text()
+- What's your personal access token? If you don't know what that is, you can read about it here, https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows
+# TextInput_Prompt_xJgDYc()
+[Activity
+    Text = ${TextInput_Prompt_xJgDYc_text()}
+]
+
+# TextInput_Prompt_xJgDYc_text()
+- What's the organization's URL?
+# SendActivity_M6l9J2()
+[Activity
+    Text = ${SendActivity_M6l9J2_text()}
+]
+
+# SendActivity_M6l9J2_text()
+- - ${turn.results}
+# SendActivity_WelcomeReturningUser_speak()
+- Hi there!
+# SendActivity_WelcomeNewUser_speak()
+- Hey!
+# ChoiceInput_Prompt_j9L5tw_speak()
+- Please indicate if you want to Make or Find or Change workitems

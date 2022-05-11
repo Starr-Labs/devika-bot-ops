@@ -57,7 +57,7 @@
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "prompt": "${TextInput_Prompt_PSNjTc()}",
-          "property": "dialog.workitemName",
+          "property": "conversation.workitemName",
           "defaultValue": "=\"Nobody lives here\"",
           "value": "=this.value"
         },
@@ -74,7 +74,7 @@
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "dialog.workItemDescription",
+          "property": "conversation.workItemDescription",
           "value": "=this.value"
         },
         {
@@ -92,11 +92,11 @@
           "assignments": [
             {
               "property": "dialog.wi.title",
-              "value": "=dialog.workitemName"
+              "value": "=conversation.workitemName"
             },
             {
               "property": "dialog.wi.description",
-              "value": "=dialog.workItemDescription"
+              "value": "=conversation.workItemDescription"
             },
             {
               "property": "dialog.wi.type",
