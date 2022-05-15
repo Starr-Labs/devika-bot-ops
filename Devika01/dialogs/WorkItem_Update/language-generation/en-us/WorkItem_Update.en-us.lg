@@ -1,12 +1,5 @@
 [import](common.lg)
 
-# NumberInput_Prompt_WnzUUT()
-[Activity
-    Text = ${NumberInput_Prompt_WnzUUT_text()}
-]
-
-# NumberInput_Prompt_WnzUUT_text()
-- Please share the workitem ID number, if you don't know it, you could always attempt to find it and then come back
 # TextInput_Prompt_To7zaZ()
 [Activity
     Text = ${TextInput_Prompt_To7zaZ_text()}
@@ -42,3 +35,11 @@
 
 # SendActivity_NnrH8v_text()
 - ${turn.results.content}
+# NumberInput_Prompt_oelKhf()
+[Activity
+    Text = ${NumberInput_Prompt_oelKhf_text()}
+]
+
+# NumberInput_Prompt_oelKhf_text()
+- What's the workitem ID number? If you don't know it, you can always search first, then come back
+- Please share the workitem ID number. Search first if you don't know it.

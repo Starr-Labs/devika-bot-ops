@@ -58,7 +58,7 @@ namespace Devika.DevOps.WorkItems
                 Environment.GetEnvironmentVariable("OrgUrl")) , 
                 Environment.GetEnvironmentVariable("Pat"));
 
-            if (workItemId == -1)
+            if (workItemId < 1)
             {
                 logger.LogInformation($"Searching for work item with title: {title}");
                 var items = await devika.FindWorkItemByTitle(title);

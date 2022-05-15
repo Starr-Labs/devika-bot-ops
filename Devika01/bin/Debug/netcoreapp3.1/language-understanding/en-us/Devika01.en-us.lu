@@ -51,7 +51,39 @@
 - make a {workitemtype=Product Backlog Item} called {workitemname=Research}
 - make a {workitemtype=Product Backlog Item} called {workitemname=User sign up}
 - make a {workitemtype=Product Backlog Item} called {workitemname=Support diverse channels}
+- make a {workitemtype=Product Backlog Item} called {workitemname=Enable project configuration}
+- make a {workitemtype=Product Backlog Item} called {workitemname=Research devops pipeline}
 - make a {workitemtype=Product Backlog Item} called {workitemname=Find new names}
+- make a {workitemtype=Task} called {workitemname=Research multiple channels}
+- make a {workitemtype=Task} called {workitemname=Implement user sign up}
+- make a {workitemtype=Task} called {workitemname=Support teams as a channel}
+- make a {workitemtype=Task} called {workitemname=Configure a new project}
+- make a {workitemtype=Task} called {workitemname=Implement first devops pipeline}
+- make a {workitemtype=Task} called {workitemname=Experiment with new new names}
+- make a {workitemtype=Bug} called {workitemname=Fix research document}
+- make a {workitemtype=Bug} called {workitemname=Troubleshoot user sign up}
+- make a {workitemtype=Bug} called {workitemname=Undo broken channels}
+- make a {workitemtype=Bug} called {workitemname=Fix project configuration}
+- make a {workitemtype=Bug} called {workitemname=Update devops pipeline}
+- make a {workitemtype=Bug} called {workitemname=Remote a few names}
+- create a {workitemtype=Product Backlog Item} called {workitemname=Research}
+- create a {workitemtype=Product Backlog Item} called {workitemname=User sign up}
+- create a {workitemtype=Product Backlog Item} called {workitemname=Support diverse channels}
+- create a {workitemtype=Product Backlog Item} called {workitemname=Enable project configuration}
+- create a {workitemtype=Product Backlog Item} called {workitemname=Research devops pipeline}
+- create a {workitemtype=Product Backlog Item} called {workitemname=Find new names}
+- create a {workitemtype=Task} called {workitemname=Research multiple channels}
+- create a {workitemtype=Task} called {workitemname=Implement user sign up}
+- create a {workitemtype=Task} called {workitemname=Support teams as a channel}
+- create a {workitemtype=Task} called {workitemname=Configure a new project}
+- create a {workitemtype=Task} called {workitemname=Implement first devops pipeline}
+- create a {workitemtype=Task} called {workitemname=Experiment with new new names}
+- create a {workitemtype=Bug} called {workitemname=Fix research document}
+- create a {workitemtype=Bug} called {workitemname=Troubleshoot user sign up}
+- create a {workitemtype=Bug} called {workitemname=Undo broken channels}
+- create a {workitemtype=Bug} called {workitemname=Fix project configuration}
+- create a {workitemtype=Bug} called {workitemname=Update devops pipeline}
+- create a {workitemtype=Bug} called {workitemname=Remote a few names}
 - make a {workitemtype=PBI} called {workitemname=Research}
 - make a {workitemtype=PBI} called {workitemname=User sign up}
 - make a {workitemtype=PBI} called {workitemname=Support diverse channels}
@@ -75,7 +107,6 @@
 @ ml @workitemname
 @ ml @workitemdescription
 @ ml @workitemrelated
-
 
 # WorkItem_Find_Trigger
 - find

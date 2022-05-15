@@ -160,6 +160,7 @@ namespace Devika.ClassLib
             var teamProjectName = "TestProject";
             var query = $"Select * From WorkItems Where [System.TeamProject] = '{teamProjectName}'" +
                 " AND [System.State] <> 'Removed' AND ID = " + id + "";
+            Console.WriteLine(query);
             // Get a client
             WorkItemTrackingHttpClient witClient = Connection.GetClient<WorkItemTrackingHttpClient>();
             // use client to query for work items by title
@@ -231,7 +232,7 @@ namespace Devika.ClassLib
             var workItemReferences = workItemQueryResult.WorkItems.ToList();
             // convert result to list of work items
             var workitemRef = workItemQueryResult.WorkItems.FirstOrDefault();
-            if (workitemRef != null)
+            if (workitemRef != null && workitemRef.Id > 0)
             {
                 // update the work item
                 JsonPatchDocument patchDocument = new()

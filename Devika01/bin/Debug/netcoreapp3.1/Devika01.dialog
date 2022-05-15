@@ -208,23 +208,6 @@
           "value": "=@workitemdescription"
         },
         {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "VyKJSv"
-          },
-          "condition": "=conversation.workItemType == \"pbi\"",
-          "actions": [
-            {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "hS5Rmg"
-              },
-              "property": "conversation.workItemType",
-              "value": "=\"Product Backlog Item\""
-            }
-          ]
-        },
-        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "5l4ExZ"
@@ -239,7 +222,7 @@
           }
         }
       ],
-      "condition": "=turn.recognized.score > 0.9"
+      "condition": "=turn.recognized.score > 0.8"
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -275,7 +258,7 @@
         "name": "WorkItem_Update_Trigger"
       },
       "intent": "WorkItem_Update_Trigger",
-      "condition": "=turn.recognized.score > 0.9",
+      "condition": "=turn.recognized.score > 0.8",
       "actions": [
         {
           "$kind": "Microsoft.SetProperties",
@@ -285,15 +268,15 @@
           "assignments": [
             {
               "property": "conversation.workitemID",
-              "value": "@workitemID"
+              "value": "=@workitemID"
             },
             {
               "property": "conversation.workitemPropName",
-              "value": "@workitemPropName"
+              "value": "=@workitemPropName"
             },
             {
               "property": "conversation.workitemPropValue",
-              "value": "@workitemPropValue"
+              "value": "=@workitemPropValue"
             }
           ]
         },

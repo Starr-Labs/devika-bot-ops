@@ -19,16 +19,17 @@
         {
           "$kind": "Microsoft.NumberInput",
           "$designer": {
-            "id": "WnzUUT"
+            "id": "oelKhf"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${NumberInput_Prompt_WnzUUT()}",
+          "allowInterruptions": true,
           "unrecognizedPrompt": "",
-          "property": "conversation.workItemID",
+          "invalidPrompt": "",
+          "prompt": "${NumberInput_Prompt_oelKhf()}",
+          "property": "conversation.workitemID",
           "value": "=this.value"
         },
         {

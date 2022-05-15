@@ -191,11 +191,27 @@
               "value": "=turn.results.content"
             },
             {
+              "$kind": "Microsoft.TraceActivity",
+              "$designer": {
+                "id": "PIgHVM"
+              },
+              "name": "Results",
+              "value": "${turn.wi}"
+            },
+            {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
                 "id": "od1sa2"
               },
               "activity": "${SendActivity_od1sa2()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "DZPBmZ"
+              },
+              "property": "conversation.workItemID",
+              "value": "= turn.wi.Id"
             },
             {
               "$kind": "Microsoft.DeleteProperty",

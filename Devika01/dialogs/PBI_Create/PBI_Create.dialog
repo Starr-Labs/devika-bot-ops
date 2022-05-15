@@ -29,7 +29,6 @@
           "prompt": "${ChoiceInput_Prompt_44AsfX()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
@@ -37,13 +36,16 @@
             "inlineSeparator": ", "
           },
           "choices": [
-            "PBI",
-            "Bug",
-            "Task"
+            "pbi",
+            "bug",
+            "task"
           ],
           "style": "none",
-          "value": "=coalesce(this.value, @workitemType)",
-          "property": "conversation.workItemType"
+          "value": "=this.value",
+          "property": "conversation.workItemType",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
         },
         {
           "$kind": "Microsoft.TextInput",
@@ -113,7 +115,7 @@
           "$designer": {
             "id": "gLqv3C"
           },
-          "condition": "=dialog.wi.type == \"Bug\" || dialog.wi.type == \"Task\"",
+          "condition": "=dialog.wi.type == \"bug\" || dialog.wi.type == \"task\"",
           "actions": [
             {
               "$kind": "Microsoft.TextInput",

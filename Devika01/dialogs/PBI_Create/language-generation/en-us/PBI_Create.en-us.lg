@@ -44,3 +44,10 @@ Going to save it now.```
 
 # ChoiceInput_Prompt_44AsfX_text()
 - What kind of workitem do you want to create?
+# LogAction_Text_LCQRWy()
+[Activity
+    Text = ${LogAction_Text_LCQRWy_text()}
+]
+
+# LogAction_Text_LCQRWy_text()
+- In WorkItem_Create
