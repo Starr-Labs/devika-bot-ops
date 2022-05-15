@@ -28,9 +28,39 @@
           "allowInterruptions": false,
           "prompt": "${NumberInput_Prompt_WnzUUT()}",
           "unrecognizedPrompt": "",
+          "property": "conversation.workItemID",
+          "value": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "To7zaZ"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_To7zaZ()}",
+          "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "dialog.workItemID",
+          "property": "conversation.workItemPropName",
+          "value": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "leGlyg"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_leGlyg()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "conversation.workItemPropValue",
           "value": "=this.value"
         },
         {
@@ -40,22 +70,122 @@
           },
           "resultProperty": "turn.results",
           "method": "GET",
-          "url": "http://localhost:7071/api/GetWorkItemDetail?id=${dialog.workItemID}"
+          "url": "http://localhost:7071/api/GetWorkItemDetail?id=${conversation.workItemID}"
         },
         {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "L6XYnS"
           },
-          "property": "turn.wi",
+          "property": "dialog.wi",
           "value": "=turn.results.content"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.ConfirmInput",
           "$designer": {
-            "id": "OPjlPP"
+            "id": "0j0TYD"
           },
-          "activity": "${SendActivity_OPjlPP()}"
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_0j0TYD()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "dialog.confirmedChange",
+          "value": "=this.value",
+          "style": "list",
+          "confirmChoices": [
+            "yes",
+            "no"
+          ],
+          "validations": []
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "5047jX"
+          },
+          "condition": "=dialog.confirmedChange",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "9DDfDH"
+              },
+              "property": "dialog.propChange",
+              "value": "={}"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "x1wBbX"
+              },
+              "assignments": [
+                {
+                  "property": "conversation.propChange.workItemID",
+                  "value": "=conversation.workitemID"
+                },
+                {
+                  "property": "conversation.propChange.workItemPropName",
+                  "value": "=conversation.workitemPropName"
+                },
+                {
+                  "property": "conversation.propChange.workItemPropValue",
+                  "value": "=conversation.workItemPropValue"
+                },
+                {
+                  "property": "conversation.propChange.project",
+                  "value": "TestProject"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "kiUWRN"
+              },
+              "resultProperty": "turn.results",
+              "method": "POST",
+              "url": "http://localhost:7071/api/UpdateWorkItem?id=${turn.propChange.workItemID}",
+              "body": "${conversation.propChange}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "NnrH8v"
+              },
+              "activity": "${SendActivity_NnrH8v()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Awxx6D"
+              },
+              "activity": "${SendActivity_Awxx6D()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "RhNEhI"
+          },
+          "properties": [
+            "conversation.workitemID",
+            "dialog.confirmedChange",
+            "conversation.workitemPropValue",
+            "conversation.workitemPropName"
+          ]
         }
       ]
     }

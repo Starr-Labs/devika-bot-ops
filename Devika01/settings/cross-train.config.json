@@ -12,14 +12,20 @@
         "HelpDialog.en-us"
       ],
       "Goodbye": "",
-      "WorkItem_Find_Trigger": ""
+      "WorkItem_Find_Trigger": [
+        "WorkItem_Find.en-us"
+      ],
+      "WorkItem_Update_Trigger": [
+        "WorkItem_Update.en-us"
+      ]
     }
   },
   "WelcomeDialog.en-us": {
     "rootDialog": false,
     "triggers": {
       "": [
-        "WorkItem_Find.en-us"
+        "WorkItem_Find.en-us",
+        "WorkItem_Update.en-us"
       ]
     }
   }

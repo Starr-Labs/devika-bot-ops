@@ -196,15 +196,23 @@
           "$designer": {
             "id": "pJ8r0d"
           },
-          "property": "conversation.workItemName",
+          "property": "conversation.workitemName",
           "value": "=@workitemname"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "vvp40d"
+          },
+          "property": "conversation.workitemDescription",
+          "value": "=@workitemdescription"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "VyKJSv"
           },
-          "condition": "=toLowerCase(conversation.workItemType) == \"pbi\"",
+          "condition": "=conversation.workItemType == \"pbi\"",
           "actions": [
             {
               "$kind": "Microsoft.SetProperty",
@@ -250,15 +258,54 @@
           "value": "=@titlefragment"
         },
         {
-          "$kind": "Microsoft.ReplaceDialog",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "H4zpXB"
+            "id": "60wnaw"
           },
           "activityProcessed": true,
           "dialog": "WorkItem_Find"
         }
       ],
-      "condition": "=turn.condition > 0.7"
+      "condition": "=turn.recognized.score > 0.7"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "hCV2ex",
+        "name": "WorkItem_Update_Trigger"
+      },
+      "intent": "WorkItem_Update_Trigger",
+      "condition": "=turn.recognized.score > 0.9",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "cjvngB"
+          },
+          "assignments": [
+            {
+              "property": "conversation.workitemID",
+              "value": "@workitemID"
+            },
+            {
+              "property": "conversation.workitemPropName",
+              "value": "@workitemPropName"
+            },
+            {
+              "property": "conversation.workitemPropValue",
+              "value": "@workitemPropValue"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "IbLIXU"
+          },
+          "activityProcessed": true,
+          "dialog": "WorkItem_Update"
+        }
+      ]
     }
   ],
   "generator": "Devika01.lg",

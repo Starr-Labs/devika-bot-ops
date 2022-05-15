@@ -17,11 +17,15 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.DeleteProperty",
+          "$kind": "Microsoft.DeleteProperties",
           "$designer": {
-            "id": "lomQcU"
+            "id": "gEmmCk"
           },
-          "property": "conversation.foundWorkItem"
+          "properties": [
+            "conversation.foundWorkItem",
+            "conversation.foundItemsSimple",
+            "conversaton.foundItemsSimpleResult"
+          ]
         },
         {
           "$kind": "Microsoft.TextInput",
@@ -35,14 +39,14 @@
           "prompt": "${TextInput_Prompt_rQ0c8R()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "defaultValueResponse": "",
           "property": "conversation.workItemTitleFragment",
           "value": "= this.value"
         },
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "FKh63s"
+            "id": "FKh63s",
+            "comment": "Was this: https://fn-devika.azurewebsites.net/api/FindWorkItem?title=${conversation.workItemTitleFragment}"
           },
           "resultProperty": "turn.results",
           "method": "GET",
@@ -61,6 +65,13 @@
                 "id": "JLX12F"
               },
               "activity": "${SendActivity_JLX12F()}"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "wW6UPf"
+              },
+              "property": "conversation.workItemTitleFragment"
             },
             {
               "$kind": "Microsoft.EndDialog",

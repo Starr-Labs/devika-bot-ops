@@ -41,7 +41,7 @@
             "Bug",
             "Task"
           ],
-          "style": "heroCard",
+          "style": "none",
           "value": "=coalesce(this.value, @workitemType)",
           "property": "conversation.workItemType"
         },
@@ -167,8 +167,16 @@
             "id": "yTrjoR"
           },
           "properties": [
-            "conversation.workItemType"
+            "conversation.workItemType",
+            "conversation.workitemName",
+            "conversation.workitemDescription"
           ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "JRk1lY"
+          }
         }
       ]
     }

@@ -8,50 +8,15 @@
 > # Intent definitions
 
 # ChoiceInput_Response_j9L5tw
-- make a {@workitemtype=Product Backlog Item} called {@workitemname=Research}
-- make a {@workitemtype=Product Backlog Item} called {@workitemname=User sign up}
-- make a {@workitemtype=Product Backlog Item} called {@workitemname=Support diverse channels}
-- make a {@workitemtype=Product Backlog Item} called {@workitemname=Find new names}
-- make a {@workitemtype=PBI} called {@workitemname=Research}
-- make a {@workitemtype=PBI} called {@workitemname=User sign up}
-- make a {@workitemtype=PBI} called {@workitemname=Support diverse channels}
-- make a {@workitemtype=PBI} called {@workitemname=Find new names}
-- make {@workitemtype=PBI}
-- make {@workitemtype=Product Backlog Item}
-- make {@workitemtype=Bug}
-- make {@workitemtype=Task}
-- make a {@workitemtype=Bug} called {@workitemname=Error in form} that {@workitemdescription=causes the form to load badly}
-- make a {@workitemtype=Bug} called {@workitemname=Missing values} that {@workitemdescription=is missing values}
-- make a {@workitemtype=Bug} called {@workitemname=Exception in production} that {@workitemdescription=is happening when the user clicks}
-- make a {@workitemtype=Bug} called {@workitemname=Bad username} that {@workitemdescription=is causing the username to fail}
-- make a {@workitemtype=Bug} called {@workitemname=Unknown} that {@workitemdescription=is hard to reproduce}
-- make a {@workitemtype=Task} called {@workitemname=Load users} that {@workitemdescription=will load all the test users} and is linked to {@workitemrelated=265}
-- make a {@workitemtype=Task} called {@workitemname=Research channels} that {@workitemdescription=find out which channels to use} and is linked to {@workitemrelated=300}
-- make a {@workitemtype=Task} called {@workitemname=Complete documentation} that {@workitemdescription=complete all documentation} and is linked to {@workitemrelated=18}
-- make a {@workitemtype=Task} called {@workitemname=Create unit tests} that {@workitemdescription=will test using unit tests} and is linked to {@workitemrelated=2605}
-- Please give me a {@workitemtype=Task}
-- Please give me a {@workitemtype=Bug}
-- Please give me a {@workitemtype=Product Backlog Item}
-- Please give me a {@workitemtype=PBI}
+- make
+- find
+- change
+- search
+- create
+- edit
 
 
 > # Entity definitions
-
-@ ml @workitemtype
-
-@ ml @workitemname
-
-@ ml @workitemdescription
-
-@ ml @workitemrelated
-
-@ ml workitemtype
-
-@ ml workitemname
-
-@ ml workitemdescription
-
-@ ml workitemrelated
 
 
 > # PREBUILT Entity definitions
@@ -77,6 +42,7 @@
 - forget about it
 - just stop already
 - end this now
+- don't bother
 - help
 - im stuck
 - how do you work
@@ -89,10 +55,12 @@
 - bye
 - see you
 - take it easy
-- find
-- search
 - look up
 - lookup
+- i want to find a workitem
+- i want to find a bug
+- i want to find a pbi
+- i want to find a task
 - find again
 - search again
 - find using title test 02
@@ -103,3 +71,12 @@
 - search again using title test 02
 - find with description a longer description
 - search with description another longer description
+- update
+- modify
+- update 1 make Description be a new description
+- change 10 from [Previous Value] to a new description
+- edit 100 so that Name now has the value a new value
+- let 2000 with the property Title be changed to better title
+- please update 1 to be Description be a new description
+- do change 10 from [Previous Value] to a new description
+- modify 100 so that Name now has the value a new value

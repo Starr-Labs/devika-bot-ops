@@ -21,7 +21,6 @@ namespace Devika.DevOps.WorkItems
             FunctionContext executionContext)
         {
             var logger = executionContext.GetLogger("FindWorkItem");
-            logger.LogInformation("Find workitem request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             //get title from azure function query string parameter
@@ -41,23 +40,55 @@ namespace Devika.DevOps.WorkItems
                 response.WriteString("Please provide a title fragment.");
                 return response;
             }
+
+            logger.LogInformation("Find workitem request: " + title);
+
+
+            int workItemId = -1;
+
+            //is title a number?
+            if (int.TryParse(title, out workItemId))
+            {
+                logger.LogInformation($"Work item id: {workItemId}");
+            }
             
             
             //search for work item by title
             Devika.ClassLib.Devika devika = new(new Uri(
                 Environment.GetEnvironmentVariable("OrgUrl")) , 
                 Environment.GetEnvironmentVariable("Pat"));
-            var items = await devika.FindWorkItemByTitle(title);
-            if (null != items)
+
+            if (workItemId == -1)
             {
-                //return json array 
-                response.WriteString(JsonConvert.SerializeObject(items));
+                logger.LogInformation($"Searching for work item with title: {title}");
+                var items = await devika.FindWorkItemByTitle(title);
+                if (null != items)
+                {
+                    //return json array 
+                    response.WriteString(JsonConvert.SerializeObject(items));
+                }
+                //return empty array
+                else
+                {
+                    response.WriteString(JsonConvert.SerializeObject(new List<WorkItemReference>()));
+                }
             }
-            //return empty array
             else
             {
-                response.WriteString(JsonConvert.SerializeObject(new List<WorkItemReference>()));
-            }
+                var item = await devika.FindWorkItemById(workItemId.ToString());
+                if (null != item)
+                {
+                    var list = new List<dynamic>{item};
+                    var json = (string)JsonConvert.SerializeObject(list);
+                    response.WriteString(json);
+                }
+                //return empty array
+                else
+                {
+                    response.WriteString(JsonConvert.SerializeObject(new List<WorkItemReference>()));
+                }
+            }           
+            
 
             return response;
         }

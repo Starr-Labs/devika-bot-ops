@@ -7,14 +7,38 @@
 
 # NumberInput_Prompt_WnzUUT_text()
 - Please share the workitem ID number, if you don't know it, you could always attempt to find it and then come back
-# SendActivity_OPjlPP()
+# TextInput_Prompt_To7zaZ()
 [Activity
-    Attachments = ${SendActivity_OPjlPP_attachment_6uDqEo()}
+    Text = ${TextInput_Prompt_To7zaZ_text()}
 ]
 
-# SendActivity_OPjlPP_attachment_6uDqEo()
-[HeroCard
-  title = ${turn.wi.Title}
-  subtitle = ${turn.wi.Type}
-  text = ${turn.wi.Description}
+# TextInput_Prompt_To7zaZ_text()
+- What's the name of the property?
+# TextInput_Prompt_leGlyg()
+[Activity
+    Text = ${TextInput_Prompt_leGlyg_text()}
 ]
+
+# TextInput_Prompt_leGlyg_text()
+- What's the new value for ${conversation.workItemPropName}?
+# ConfirmInput_Prompt_0j0TYD()
+[Activity
+    Text = ${ConfirmInput_Prompt_0j0TYD_text()}
+]
+
+# ConfirmInput_Prompt_0j0TYD_text()
+- Should I go ahead and change the ${dialog.wi.Type}'s ${conversation.workItemPropName} to "${conversation.workItemPropValue}"?
+# SendActivity_Awxx6D()
+[Activity
+    Text = ${SendActivity_Awxx6D_text()}
+]
+
+# SendActivity_Awxx6D_text()
+- OK, please try again when ready.
+# SendActivity_NnrH8v()
+[Activity
+    Text = ${SendActivity_NnrH8v_text()}
+]
+
+# SendActivity_NnrH8v_text()
+- ${turn.results.content}

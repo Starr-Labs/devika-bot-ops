@@ -33,13 +33,6 @@
 
 # ChoiceInput_Prompt_j9L5tw_text()
 - Please choose a workitem activity
-# ConfirmInput_Prompt_kv3UzU()
-[Activity
-    Text = ${ConfirmInput_Prompt_kv3UzU_text()}
-]
-
-# ConfirmInput_Prompt_kv3UzU_text()
-- - Have a great day!
 # SendActivity_WQCMsy()
 [Activity
     Text = ${SendActivity_WQCMsy_text()}
@@ -57,6 +50,7 @@
 # TextInput_Prompt_p07bQu()
 [Activity
     Text = ${TextInput_Prompt_p07bQu_text()}
+    Speak = ${TextInput_Prompt_p07bQu_speak()}
 ]
 
 # TextInput_Prompt_p07bQu_text()
@@ -81,3 +75,5 @@
 - Hey!
 # ChoiceInput_Prompt_j9L5tw_speak()
 - Please indicate if you want to Make or Find or Change workitems
+# TextInput_Prompt_p07bQu_speak()
+- Please share your access token.

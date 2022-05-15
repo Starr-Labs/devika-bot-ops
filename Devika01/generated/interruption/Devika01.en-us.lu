@@ -16,6 +16,7 @@
 - forget about it
 - just stop already
 - end this now
+- don't bother
 
 
 # Help
@@ -52,6 +53,10 @@
 - make a {@workitemtype=PBI}
 - make a {@workitemtype=Task}
 - make a {@workitemtype=Bug}
+- create a {@workitemtype=Product Backlog Item}
+- create a {@workitemtype=PBI}
+- create a {@workitemtype=Task}
+- create a {@workitemtype=Bug}
 - new {@workitemtype=Product Backlog Item}
 - new {@workitemtype=PBI}
 - new {@workitemtype=Bug}
@@ -84,6 +89,10 @@
 - search
 - look up
 - lookup
+- i want to find a workitem
+- i want to find a bug
+- i want to find a pbi
+- i want to find a task
 - find again
 - search again
 - find using title {@titlefragment=test 02}
@@ -94,6 +103,19 @@
 - search again using title {@titlefragment=test 02}
 - find with description {@descriptionfragment=a longer description}
 - search with description {@descriptionfragment=another longer description}
+
+
+# WorkItem_Update_Trigger
+- change
+- update
+- modify
+- update {@workitemID=1} make {@workitemPropName=Description} be {@workitemPropValue=a new description}
+- change {@workitemID=10} from {@workitemPropName=[Previous Value]} to {@workitemPropValue=a new description}
+- edit {@workitemID=100} so that {@workitemPropName=Name} now has the value {@workitemPropValue=a new value}
+- let {@workitemID=2000} with the property {@workitemPropName=Title} be changed to {@workitemPropValue=better title}
+- please update {@workitemID=1} to be {@workitemPropName=Description} be {@workitemPropValue=a new description}
+- do change {@workitemID=10} from {@workitemPropName=[Previous Value]} to {@workitemPropValue=a new description}
+- modify {@workitemID=100} so that {@workitemPropName=Name} now has the value {@workitemPropValue=a new value}
 
 
 > # Entity definitions
@@ -109,6 +131,12 @@
 @ ml @titlefragment
 
 @ ml @descriptionfragment
+
+@ ml workitemID
+
+@ ml workitemPropName
+
+@ ml workitemPropValue
 
 @ ml workitemtype
 

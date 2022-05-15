@@ -13,7 +13,7 @@
 ]
 
 # SendActivity_M123lY_text()
-- ```\- The name of the ${conversation.workItemType} will be ${dialog.workitemName} and it's trying to ${dialog.workitemDescription}.
+- ```\- The name of the ${conversation.workItemType} will be ${conversation.workitemName} and it's trying to ${conversation.workitemDescription}.
 Going to save it now.```
 - - Saving ${conversation.workItemType}
 # TextInput_Prompt_pXeeOF()
@@ -22,7 +22,7 @@ Going to save it now.```
 ]
 
 # TextInput_Prompt_pXeeOF_text()
-- - What do you want to accomplish with this ${conversation.workItemType}. 
+- - What do you want to accomplish with the "${conversation.workitemName}"  ${conversation.workItemType}.
 # SendActivity_aDa9zo()
 [Activity
     Text = ${SendActivity_aDa9zo_text()}

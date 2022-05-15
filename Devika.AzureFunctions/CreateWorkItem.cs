@@ -23,8 +23,6 @@ namespace Devika.DevOps.WorkItems
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-
-            response.WriteString("Welcome to Azure Functions!\n");
             
             var content = await new StreamReader(req.Body).ReadToEndAsync();
 
@@ -37,7 +35,7 @@ namespace Devika.DevOps.WorkItems
                 type = "Product Backlog Item";
             }
             string description = data.description;
-            string parentId = data.parentId;
+            string parentId = data.parent;
 
             logger.LogInformation($"Going to make a new {type} for "+
                 $"{project} with title {title} and parent {parentId}");
