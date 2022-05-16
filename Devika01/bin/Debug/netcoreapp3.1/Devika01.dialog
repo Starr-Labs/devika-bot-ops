@@ -289,6 +289,24 @@
           "dialog": "WorkItem_Update"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "4sdnHi",
+        "name": "Hello_Trigger"
+      },
+      "intent": "Hello_Trigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "zoPrMj"
+          },
+          "activityProcessed": true,
+          "dialog": "WelcomeDialog"
+        }
+      ]
     }
   ],
   "generator": "Devika01.lg",

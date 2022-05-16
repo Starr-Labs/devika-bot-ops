@@ -4,7 +4,7 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "luis:endpointKey": "c66e241638b5498ca3af3ac3d2dcb6f8",
-    "SkillHostEndpoint": "http://127.0.0.1:3980/api/skills"
+    "SkillHostEndpoint": "http://127.0.0.1:3981/api/skills"
   },
   "ConnectionStrings": {}
 }

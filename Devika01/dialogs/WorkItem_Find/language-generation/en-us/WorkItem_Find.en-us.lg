@@ -23,12 +23,17 @@
 - Sorry, didn't find anything matching your criteria - ${conversation.workItemTitleFragment}
 # SendActivity_od1sa2()
 [Activity
+    Speak = ${SendActivity_od1sa2_speak()}
     Attachments = ${SendActivity_od1sa2_attachment_WVKevW()}
 ]
 
 # SendActivity_od1sa2_attachment_WVKevW()
 [HeroCard
-  title = ${turn.wi.Title}
+  title = ${turn.wi.Title}: ${turn.wi.State}
   subtitle = ${turn.wi.Type}
   text = ${turn.wi.Description}
 ]
+
+
+# SendActivity_od1sa2_speak()
+- <s>The "${turn.wi.Title}" ${turn.wi.Type} is ${turn.wi.State}.</s> <s>It's purpose is <prosody pitch="medium" rate="medium" volume="medium">"${turn.wi.Description}"</prosody></s>

@@ -36,7 +36,7 @@ Going to save it now.```
 ]
 
 # TextInput_Prompt_2wcXR0_text()
-- Please provide the parent ID or Title
+- Please provide the parent ID. You can do a lookup here with find, too.
 # ChoiceInput_Prompt_44AsfX()
 [Activity
     Text = ${ChoiceInput_Prompt_44AsfX_text()}

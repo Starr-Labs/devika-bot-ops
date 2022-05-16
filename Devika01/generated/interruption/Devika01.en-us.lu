@@ -79,6 +79,9 @@
 - make a {@workitemtype=Bug} called {@workitemname=Fix project configuration}
 - make a {@workitemtype=Bug} called {@workitemname=Update devops pipeline}
 - make a {@workitemtype=Bug} called {@workitemname=Remote a few names}
+- make a {@workitemtype=Bug} called {@workitemname=Fix it}
+- make a {@workitemtype=Bug} called {@workitemname=Bad item}
+- make a {@workitemtype=Bug} called {@workitemname=new challenges}
 - create a {@workitemtype=Product Backlog Item} called {@workitemname=Research}
 - create a {@workitemtype=Product Backlog Item} called {@workitemname=User sign up}
 - create a {@workitemtype=Product Backlog Item} called {@workitemname=Support diverse channels}
@@ -148,6 +151,18 @@
 - please update {@workitemID=1} to be {@workitemPropName=Description} be {@workitemPropValue=a new description}
 - do change {@workitemID=10} from {@workitemPropName=[Previous Value]} to {@workitemPropValue=a new description}
 - modify {@workitemID=100} so that {@workitemPropName=Name} now has the value {@workitemPropValue=a new value}
+
+
+# Hello_Trigger
+- hello
+- hi
+- howdy
+- good day
+- good morning
+- good evening
+- good afternoon
+- good night
+- what's up
 
 
 > # Entity definitions

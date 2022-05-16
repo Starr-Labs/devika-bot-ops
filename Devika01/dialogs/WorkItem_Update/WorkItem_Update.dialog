@@ -71,7 +71,7 @@
           },
           "resultProperty": "turn.results",
           "method": "GET",
-          "url": "http://localhost:7071/api/GetWorkItemDetail?id=${conversation.workItemID}"
+          "url": "https://fn-devika.azurewebsites.net/api/GetWorkItemDetail?id=${conversation.workItemID}"
         },
         {
           "$kind": "Microsoft.SetProperty",
@@ -155,7 +155,7 @@
               },
               "resultProperty": "turn.results",
               "method": "POST",
-              "url": "http://localhost:7071/api/UpdateWorkItem?id=${turn.propChange.workItemID}",
+              "url": "https://fn-devika.azurewebsites.net/api/UpdateWorkItem?id=${turn.propChange.workItemID}",
               "body": "${conversation.propChange}"
             },
             {
@@ -173,6 +173,20 @@
                 "id": "Awxx6D"
               },
               "activity": "${SendActivity_Awxx6D()}"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperties",
+              "$designer": {
+                "id": "VpJ9lt"
+              },
+              "properties": [
+                "conversation.workItemPropName",
+                "conversation.propChange",
+                "conversation.workItemPropValue",
+                "conversation.workitemID",
+                "conversation.foundItemsSimpleResult",
+                "conversation.foundWorkItem"
+              ]
             }
           ]
         },

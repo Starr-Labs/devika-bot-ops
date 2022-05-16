@@ -17,6 +17,9 @@
       ],
       "WorkItem_Update_Trigger": [
         "WorkItem_Update.en-us"
+      ],
+      "Hello_Trigger": [
+        "WelcomeDialog.en-us"
       ]
     }
   },

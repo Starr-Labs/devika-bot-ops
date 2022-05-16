@@ -50,7 +50,7 @@
           },
           "resultProperty": "turn.results",
           "method": "GET",
-          "url": "http://localhost:7071/api/FindWorkItem?title=${conversation.workItemTitleFragment}"
+          "url": "https://fn-devika.azurewebsites.net/api/FindWorkItem?title=${conversation.workItemTitleFragment}"
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -180,7 +180,7 @@
               },
               "resultProperty": "turn.results",
               "method": "GET",
-              "url": "http://localhost:7071/api/GetWorkItemDetail?id=${conversation.foundWorkItem}"
+              "url": "https://fn-devika.azurewebsites.net/api/GetWorkItemDetail?id=${conversation.foundWorkItem}"
             },
             {
               "$kind": "Microsoft.SetProperty",
@@ -210,7 +210,7 @@
               "$designer": {
                 "id": "DZPBmZ"
               },
-              "property": "conversation.workItemID",
+              "property": "conversation.workitemID",
               "value": "= turn.wi.Id"
             },
             {
