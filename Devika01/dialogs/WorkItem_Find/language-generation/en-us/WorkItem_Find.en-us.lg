@@ -7,6 +7,7 @@
 
 # TextInput_Prompt_rQ0c8R_text()
 - Time to search: do you have a work item ID? Enter it. If not, do you remember the title of the work item, drop it here and we'll try to find it.
+- Time to search. Enter "recent" to see the last workitems, a fragment of the work item title you want or just a workitem ID.
 # ChoiceInput_Prompt_1svNZm()
 [Activity
     Text = ${ChoiceInput_Prompt_1svNZm_text()}
@@ -37,3 +38,20 @@
 
 # SendActivity_od1sa2_speak()
 - <s>The "${turn.wi.Title}" ${turn.wi.Type} is ${turn.wi.State}.</s> <s>It's purpose is <prosody pitch="medium" rate="medium" volume="medium">"${turn.wi.Description}"</prosody></s>
+# SendActivity_fK6p3F()
+[Activity
+    Text = ${SendActivity_fK6p3F_text()}
+]
+
+# SendActivity_fK6p3F_text()
+- You most recently searched for these work items:
+# SendActivity_0HRMpE()
+[Activity
+    Text = ${SendActivity_0HRMpE_text()}
+    Speak = ${SendActivity_0HRMpE_speak()}
+]
+
+# SendActivity_0HRMpE_text()
+- - ${dialog.foreach.value.WorkItemId +": "+ dialog.foreach.value.WorkItemTitle}
+# SendActivity_0HRMpE_speak()
+- - ${dialog.foreach.value.WorkItemId}

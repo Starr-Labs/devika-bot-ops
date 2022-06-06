@@ -28,6 +28,73 @@
           ]
         },
         {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "vR3MVW"
+          },
+          "resultProperty": "turn.results",
+          "method": "GET",
+          "url": "https://fn-devika.azurewebsites.net/api/GetWorkItemRequestLog?creatorId=${turn.activity.from.id}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "LkpDyM"
+          },
+          "property": "dialog.recentWorkItems",
+          "value": "=turn.results.content"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "suMhRn"
+          },
+          "property": "turn.hidePrevious",
+          "value": "=dialog.recentWorkItems.length < 1"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "oC6QZu"
+          },
+          "condition": "turn.hidePrevious",
+          "cases": [
+            {
+              "value": true
+            },
+            {
+              "value": false,
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "fK6p3F"
+                  },
+                  "activity": "${SendActivity_fK6p3F()}"
+                },
+                {
+                  "$kind": "Microsoft.Foreach",
+                  "$designer": {
+                    "id": "FhY92a"
+                  },
+                  "index": "dialog.foreach.index",
+                  "value": "dialog.foreach.value",
+                  "itemsProperty": "dialog.recentWorkItems",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "0HRMpE"
+                      },
+                      "activity": "${SendActivity_0HRMpE()}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "rQ0c8R"
@@ -204,6 +271,48 @@
                 "id": "od1sa2"
               },
               "activity": "${SendActivity_od1sa2()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "hUzKGj"
+              },
+              "property": "turn.wiLog",
+              "value": "={}"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "6TP2pp"
+              },
+              "assignments": [
+                {
+                  "property": "turn.wiLog.CreatorId",
+                  "value": "=turn.activity.from.id"
+                },
+                {
+                  "property": "turn.wiLog.WorkItemId",
+                  "value": "=turn.wi.Id"
+                },
+                {
+                  "property": "turn.wiLog.WorkItemTitle",
+                  "value": "= turn.wi.Title"
+                },
+                {
+                  "property": "turn.wiLog.WorkItemUrl",
+                  "value": "=turn.wi.State"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "5o9dU3"
+              },
+              "resultProperty": "turn.results",
+              "method": "POST",
+              "url": "https://fn-devika.azurewebsites.net/api/SaveWorkItemRequestLog",
+              "body": "=turn.wiLog"
             },
             {
               "$kind": "Microsoft.SetProperty",

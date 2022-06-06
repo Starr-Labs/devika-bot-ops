@@ -66,6 +66,9 @@
 - make a {workitemtype=Bug} called {workitemname=Fix project configuration}
 - make a {workitemtype=Bug} called {workitemname=Update devops pipeline}
 - make a {workitemtype=Bug} called {workitemname=Remote a few names}
+- make a {workitemtype=Bug} called {workitemname=Fix it}
+- make a {workitemtype=Bug} called {workitemname=Bad item}
+- make a {workitemtype=Bug} called {workitemname=new challenges}
 - create a {workitemtype=Product Backlog Item} called {workitemname=Research}
 - create a {workitemtype=Product Backlog Item} called {workitemname=User sign up}
 - create a {workitemtype=Product Backlog Item} called {workitemname=Support diverse channels}
